@@ -3,7 +3,7 @@
 Summary:	Cups Driver for KONICA MINOLTA magicolor 5430 DL
 Name:		cups-drivers-%{rname}
 Version:	1.8.1
-Release:	22
+Release:	23
 License:	GPL
 Group:		System/Printing
 URL:		http://printer.konicaminolta.net/
