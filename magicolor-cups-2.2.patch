@@ -1,0 +1,11 @@
+diff -up magicolor5430DL-1.8.1/src/rastertokmlf.c.omv~ magicolor5430DL-1.8.1/src/rastertokmlf.c
+--- magicolor5430DL-1.8.1/src/rastertokmlf.c.omv~	2018-11-27 17:24:13.006297641 +0100
++++ magicolor5430DL-1.8.1/src/rastertokmlf.c	2018-11-27 17:24:22.547344002 +0100
+@@ -53,6 +53,7 @@
+  */
+ 
+ #include <cups/cups.h>
++#include <cups/ppd.h>
+ //#include <cups/string.h>
+ #include <cups/language.h>
+ #include <cups/raster.h>
