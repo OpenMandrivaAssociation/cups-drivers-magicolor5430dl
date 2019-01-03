@@ -3,18 +3,19 @@
 Summary:	Cups Driver for KONICA MINOLTA magicolor 5430 DL
 Name:		cups-drivers-%{rname}
 Version:	1.8.1
-Release:	27
+Release:	28
 License:	GPL
 Group:		System/Printing
 URL:		http://printer.konicaminolta.net/
 Source0:	magicolor5430DL-%{version}.tar.gz
-Patch0:		magicolor2430DL-shared_system_libs.diff
-Patch1:		magicolor-automake-1.13.patch
-Patch2:		magicolor-cups-2.2.patch
+Patch0:		magicolor5430DL-shared_system_libs.diff
+Patch1:		magicolor5430DL-1.8.1-automake-1.13.patch
+Patch2:		magicolor5430DL-1.8.1-cups-2.2.patch
+Patch3:		magicolor5430DL-lcms2.patch
 BuildRequires:	automake
 BuildRequires:	cups-devel
 BuildRequires:	jbig-devel
-BuildRequires:	lcms-devel
+BuildRequires:	pkgconfig(lcms2)
 Requires:	cups
 Conflicts:	cups-drivers = 2007
 Conflicts:	printer-utils = 2007
@@ -33,8 +34,9 @@ This package contains CUPS drivers (PPD) for the following printers:
 
 %setup -q -n magicolor5430DL-%{version}
 %patch0 -p0
-%patch1 -p1 -b .am113~
-%patch2 -p1 -b .cups22~
+%patch1 -p1 -b .automake-1_13
+%patch2 -p1 -b .cups-2_2
+%patch3 -p1 -b .lcms2
 
 # Fix copy of CUPS headers in kmlf.h
 perl -p -i -e 's:\bcups_strlcpy:_cups_strlcpy:g' src/kmlf.h
@@ -49,17 +51,13 @@ perl -p -i -e 's:(CUPS_SERVERBIN=)"\$libdir/cups":$1`cups-config --serverbin`:' 
 rm -f configure
 libtoolize --force --copy; aclocal; automake --add-missing --copy --foreign; autoconf
 
-%configure2_5x
-
-%make
+%configure
+%make_build
 
 %install
-rm -rf %{buildroot}
-
-%makeinstall_std
+%make_install
 
 %files
-%defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog
 %{_prefix}/lib/cups/filter/rastertokm5430dl
 %{_datadir}/KONICA_MINOLTA/mc5430DL

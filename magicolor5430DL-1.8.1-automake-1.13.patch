@@ -1,0 +1,12 @@
+diff -up magicolor5430DL-1.8.1/configure.in.automake-1_13 magicolor5430DL-1.8.1/configure.in
+--- magicolor5430DL-1.8.1/configure.in.automake-1_13	2013-01-03 23:34:37.149141201 +0100
++++ magicolor5430DL-1.8.1/configure.in	2013-01-03 23:36:39.562952131 +0100
+@@ -4,7 +4,7 @@
+ AC_PREREQ(2.57)
+ AC_INIT(src/kmlf.h)
+ AC_CONFIG_SRCDIR([src/rastertokmlf.c])
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS(config.h)
+ AM_INIT_AUTOMAKE(magicolor5430DL,1.8.1)
+ # Checks for programs.
+ AC_PROG_CC
