@@ -6,7 +6,7 @@ Version:	1.8.1
 Release:	30
 License:	GPL
 Group:		System/Printing
-URL:		http://printer.konicaminolta.net/
+URL:		https://printer.konicaminolta.net/
 Source0:	magicolor5430DL-%{version}.tar.gz
 Patch0:		magicolor5430DL-shared_system_libs.diff
 Patch1:		magicolor5430DL-1.8.1-automake-1.13.patch
