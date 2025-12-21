@@ -12,6 +12,9 @@ Patch0:		magicolor5430DL-shared_system_libs.diff
 Patch1:		magicolor5430DL-1.8.1-automake-1.13.patch
 Patch2:		magicolor5430DL-1.8.1-cups-2.2.patch
 Patch3:		magicolor5430DL-lcms2.patch
+BuildRequires:	autoconf
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	automake
 BuildRequires:	cups-devel
 BuildRequires:	jbig-devel
